@@ -1,11 +1,15 @@
 package introductory_concept_polymorphism;
 
-public class Triangle {
+public class Triangle implements Shape {
     double base;
     double height;
-    double area;
 
-    public void shapeCalculator(){
-        area = (base * height)/2;
+    public Triangle (double base, double height){
+        this.height = height;
+        this.base = base;
+
     }
+    public double area(){
+        return (this.height * this.base)/2;
+    };
 }

@@ -4,10 +4,11 @@ public class Circle implements Shape {
     double cArea;
     double radius;
 
-    public void shapeCalculator(double radius) {
-        cArea = Math.PI * (radius * radius);
-        
+    public Circle(double radius){
+        this.radius = radius;
     }
 
-    double area(cArea);
+    public double area(){
+        return cArea= Math.PI *(this.radius*this.radius);
+    }
 }
