@@ -1,4 +1,4 @@
-package Introductory_concept;
+package Introductory_concept_encapsulation;
 
 class Book {
     private String title;
