@@ -44,8 +44,11 @@ Data coupling: passing only the necessary data (best).
 
 2. Visibility notation
 
-- = public
-  – = private
+Symbol | Visibility | Java equivalent
+ + | public | public
+ - | private | private
+ # | protected | protected
+ ~ | package (–) | (default, no modifier)
 
 3. Attributes
 
@@ -73,4 +76,52 @@ Data coupling: passing only the necessary data (best).
   Label places names the relationship.
 
 - Order — includes — Product
-  The “” near Order and “” near Product indicates a many‑to‑many association (an order can include many products; a product can appear in many orders).
+  The "_" near Order and "_" near Product indicates a many‑to‑many association (an order can include many products; a product can appear in many orders).
+
+# Design Pattern:
+
+# Singleton Design Pattern
+
+    -It is a way of designing a class so that only one object instance of that class is created.
+    -e.g og singleton:
+
+```java
+public class Singleton {
+    // 1. The sole instance, eagerly created (thread‑safe without sync)
+    private static final Singleton instance = new Singleton();
+
+    // 2. Private constructor prevents external instantiation
+    private Singleton() {
+        // initialization logic here
+    }
+
+    // 3. Public global access point
+    public static Singleton getInstance() {
+        return instance;
+    }
+
+    // Example business method
+    public void showMessage(String msg) {
+        System.out.println("Singleton says: " + msg);
+    }
+}
+
+```
+
+The singlton class is instantiated once up top and no other class can call that class instead all the classes need to call the get instance method.
+-The usage of the code will look like this:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Two references, but they point to the exact same object
+        Singleton s1 = Singleton.getInstance();
+        Singleton s2 = Singleton.getInstance();
+
+        System.out.println(s1 == s2);  // prints true
+
+        s1.showMessage("Hello world!");
+    }
+}
+
+```
