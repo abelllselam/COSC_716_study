@@ -7,13 +7,13 @@ https://www.linkedin.com/learning/java-object-oriented-programming-2/why-learn-a
 
 - Let us take the class Tree as an Example:
   Tree Class
-  Attributes Behavior
+  Attributes | Behavior
 
-  - Height - Growing
-  - Trunk diameter -
-  - Tree type
+  - Height | - Growing
+  - Trunk diameter |
+  - Tree type |
 
-- A class is self standing. It does not need attributes of behaviors.
+- A class is self standing. It does not need attributes or behaviors.
 
 -ENUM - what it is and how it works in java as it was mentioned in the video:
 
@@ -81,6 +81,17 @@ public Person(String name, int age) {
    - Only one copy exists, shared by all instances of the class.
    - Lives in the class’s area of memory (method area).
    - You can access it without creating any objects: ClassName.member.
+   - Static methods only accept static variables. unless we do this to access instant methods and fields:
+
+```java
+public static void example(Tree t) {
+    System.out.println(t.heightFt);
+}
+
+Tree is the class name.
+
+t is a local variable (a parameter) that holds a reference to one Tree instance.
+```
 
 2. Non‑static (instance) member
 
@@ -141,3 +152,8 @@ Keyword | static | (none)
 Memory | One copy per class | One copy per object
 Access without object | Yes: ClassName.member | No: must use an object ref
 Typical use | Shared utilities or constants | Object‑specific data/behavior
+
+# Built in java class:
+
+- You can control click on the import class to see inside the class.
+-
